@@ -35,7 +35,7 @@ The project consists of two main components:
 ## Getting Started
 To run the project locally, follow these steps:
 
-1. Clone the repository: `git clonehttps://github.com/cqlyj/garbage-classification.git`
+1. Clone the repository: `git clone https://github.com/cqlyj/garbage-classification.git`
 2. Navigate to the project directory: `cd garbage-classification`
 3. Install dependencies for the frontend:
    ```
