@@ -1,0 +1,6 @@
+POST http://127.0.0.1:5000/classify HTTP/1.1
+Content-Type: application/json
+
+{
+    "url":"https://utfs.io/f/9e5ea725-276b-4131-97f8-95346bdb357e-1nq2cb.png"
+}
