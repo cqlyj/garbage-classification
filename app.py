@@ -24,10 +24,7 @@ model.eval()
 app = Flask(__name__)
 
 
-# url = "https://utfs.io/f/9e5ea725-276b-4131-97f8-95346bdb357e-1nq2cb.png"
-
-
-@app.route("/classify", methods=["POST"])
+@app.route("/api/classify", methods=["POST"])
 def classify():
     data_transform = transforms.Compose(
         [
