@@ -13,7 +13,7 @@ import numpy as np
 from torchvision import models, transforms
 import matplotlib.pyplot as plt
 
-checkpoint = torch.load("model/80735.pt")
+checkpoint = torch.load("model/80735.pt", map_location=torch.device("cpu"))
 model = models.mobilenet_v3_large(weights=models.MobileNet_V3_Large_Weights.DEFAULT)
 num_ftrs = model.classifier[-1].in_features
 model.fc = nn.Linear(num_ftrs, 265)
@@ -37,15 +37,6 @@ def classify():
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
         ]
     )
-    # url = request.url
-    # print(url)
-    # response = requests.get(url)
-    # with open("image.png", "wb") as file:
-    #     file.write(response.content)
-
-    # image = Image.open("image.png").convert("RGB")
-    # image = data_transform(image)
-    # image = image.unsqueeze(0)
 
     # Get the image URL from the JSON data in the POST request
     json_data = request.get_json()
