@@ -12,6 +12,7 @@ import torch.backends.cudnn as cudnn
 import numpy as np
 from torchvision import models, transforms
 import matplotlib.pyplot as plt
+from flask_cors import CORS
 
 checkpoint = torch.load("model/80735.pt", map_location=torch.device("cpu"))
 model = models.mobilenet_v3_large(weights=models.MobileNet_V3_Large_Weights.DEFAULT)
@@ -22,6 +23,7 @@ model.eval()
 
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route("/api/classify", methods=["POST"])
